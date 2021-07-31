@@ -5,17 +5,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollectionsController;
 
 Route::get('/', function () {
-    return view('index');
+    $title = 'Home Page';
+    return view('index', compact('title'));
 });
 
 Route::get('/daily', [CollectionsController::class, 'showDaily']);
 Route::get('/weekly', [CollectionsController::class, 'showWeekly']);
 
-Route::get('/change/create', function () { return view('change/create'); });
+Route::get('/change/create', function () {
+    $title = 'Create Collection';
+    return view('change/create', compact('title'));
+});
 Route::post('/change/create', [CollectionsController::class, 'insertData']);
 
-Route::get('/change/update', function () { return view('change/update'); });
+Route::get('/change/update', function () {
+    $title = 'Change Collection';
+    return view('change/update', compact('title'));
+});
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/change/delete', [CollectionsController::class, 'deleteData']);

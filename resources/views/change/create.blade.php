@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Collection Event</title>
-</head>
-<body>
+<?php include(app_path().'/includes/header.php'); ?>
+<?php include(app_path().'/includes/navbar.php'); ?>
     <h1>Add Collection Event</h1>
 
     <form action="/change/create" method="POST">
         {{ csrf_field() }}
         <p>
             <label for="garbage">Choose the type:</label>
-            <input type="text" name="name" list="garbagelist" placeholder="Select or type the garbage typology">
+            <input type="text" name="name" autocomplete="off" list="garbagelist" placeholder="Select or type the garbage typology" required>
             <datalist id="garbagelist">
                 <option value="Indifferenziato">
                 <option value="Vetro">
@@ -24,7 +17,7 @@
         </p>
         <p>
             <label for="day">Choose a day:</label>
-            <select id="day" name="day">
+            <select id="day" name="day" required>
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
@@ -36,16 +29,15 @@
         </p>
         <p>
             <label for="start">Choose the starting time:</label>
-            <input type="time" name="start">
+            <input type="time" name="start" required>
         </p>
         <p>
             <label for="end">Choose the end time:</label>
-            <input type="time" name="end">
+            <input type="time" name="end" required>
         </p>
         <p>
         <button type="submit">Add Collection Event</button>
         </p>
         
     </form>
-</body>
-</html>
+<?php include(app_path().'/includes/footer.php'); ?>

@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Collections</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+<?php include(app_path().'/includes/header.php'); ?>
+<?php include(app_path().'/includes/navbar.php'); ?>
+
     <h1 class="text-center">Daily collections</h1>
     <h2>Today is: <?= date("l") ?></h2>
-    <?php
-        date_default_timezone_set("Europe/Rome");
-        echo "The time is " . date("H:i:s");
-    ?>
+    <h3>Time: <?php date_default_timezone_set("Europe/Rome"); echo date("H:i:s"); ?></h3>
+    
     <table class="table table-striped">
         <thead>
             <tr>
@@ -26,7 +16,12 @@
         </thead>
         <tbody>
             @foreach ($data as $collection)
-                <tr>
+                <?php
+                    $table = '';
+                    if (strtotime($collection->end) < strtotime(date("H:i:s"))) { $table = 'table-danger'; }
+                    else if ((strtotime($collection->start) < strtotime(date("H:i:s"))) && (strtotime($collection->end) > strtotime(date("H:i:s")))) { $table = 'table-success'; }
+                ?>
+                <tr class="<?= $table ?>">
                     <td>{{ $collection->name }}</td>
                     <td><strong>{{ $collection->day }}</strong></td> 
                     <td>{{ $collection->start }}</td>
@@ -35,5 +30,4 @@
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+<?php include(app_path().'/includes/footer.php'); ?>

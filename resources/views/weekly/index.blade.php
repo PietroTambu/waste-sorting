@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly collections</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+<?php include(app_path().'/includes/header.php'); ?>
+<?php include(app_path().'/includes/navbar.php'); ?>
+
     <?php $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']; ?>
     <h1 class="text-center center">Weekly collections</h1>
 
@@ -19,6 +11,7 @@
                 <th scope="col">Day</th>
                 <th scope="col">Start At:</th>
                 <th scope="col">End At:</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +22,16 @@
                         <td><strong>{{ $collection->day }}</strong></td> 
                         <td>{{ $collection->start }}</td>
                         <td>{{ $collection->end }}</td>
+                        <td>
+                            <form method="get" action="/change/delete">
+                                <input type="text" name="id" value="{{ $collection->id }}" class="d-none">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+
+<?php include(app_path().'/includes/footer.php'); ?>
