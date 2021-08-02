@@ -26,7 +26,7 @@
             @foreach ($data as $collection)
                 <?php
                     $table = '';
-                    if (strtotime($collection->end) < strtotime(date("H:i:s"))) { $table = 'table-danger'; }
+                    if (strtotime($collection->end ?? '') < strtotime(date("H:i:s"))) { $table = 'table-danger'; }
                     else if ((strtotime($collection->start) < strtotime(date("H:i:s"))) && (strtotime($collection->end) > strtotime(date("H:i:s")))) { $table = 'table-success'; }
                 ?>
                 <tr class="<?= $table ?>">
