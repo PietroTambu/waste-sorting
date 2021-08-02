@@ -1,6 +1,6 @@
 <?php $active_weekly='active'; ?>
-<?php include(app_path().'/includes/header.php'); ?>
-<?php include(app_path().'/includes/navbar.php'); ?>
+<?php include(app_path().'/include/header.php'); ?>
+<?php include(app_path().'/include/navbar.php'); ?>
 
     <?php $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']; ?>
     <h1 class="text-center center">Weekly collections</h1>
@@ -42,4 +42,4 @@
         </tbody>
     </table>
 
-<?php include(app_path().'/includes/footer.php'); ?>
+<?php include(app_path().'/include/footer.php'); ?>

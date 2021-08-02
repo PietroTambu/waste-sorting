@@ -1,6 +1,6 @@
 <?php $active_daily='active' ?>
-<?php include(app_path().'/includes/header.php'); ?>
-<?php include(app_path().'/includes/navbar.php'); ?>
+<?php include(app_path().'/include/header.php'); ?>
+<?php include(app_path().'/include/navbar.php'); ?>
 
     <h1 class="text-center">Daily collections</h1>
     <div class="container">
@@ -38,4 +38,4 @@
             @endforeach
         </tbody>
     </table>
-<?php include(app_path().'/includes/footer.php'); ?>
+<?php include(app_path().'/include/footer.php'); ?>

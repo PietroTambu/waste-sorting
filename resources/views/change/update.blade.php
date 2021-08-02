@@ -1,5 +1,5 @@
-<?php include(app_path().'/includes/header.php'); ?>
-<?php include(app_path().'/includes/navbar.php'); ?>
+<?php include(app_path().'/include/header.php'); ?>
+<?php include(app_path().'/include/navbar.php'); ?>
 
     <h1 class="text-center">Update Garbage Collection</h1>
     <?php $collection = json_decode($_GET['collection']); ?>
@@ -78,4 +78,4 @@
         </table>
 
     </form>
-<?php include(app_path().'/includes/footer.php'); ?>
+<?php include(app_path().'/include/footer.php'); ?>
