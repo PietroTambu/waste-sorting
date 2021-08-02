@@ -1,10 +1,18 @@
+<?php $active_daily='active' ?>
 <?php include(app_path().'/includes/header.php'); ?>
 <?php include(app_path().'/includes/navbar.php'); ?>
 
     <h1 class="text-center">Daily collections</h1>
-    <h2>Today is: <?= date("l") ?></h2>
-    <h3>Time: <?php date_default_timezone_set("Europe/Rome"); echo date("H:i:s"); ?></h3>
-    
+    <div class="container">
+        <div class="row text-center">
+            <h2 class="col">Today is: <?= date("l") ?></h2>
+            <h3 class="col">Time: <?php date_default_timezone_set("Europe/Rome"); echo date("H:i:s"); ?></h3>
+        </div>
+    </div>
+
+
+
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -23,7 +31,7 @@
                 ?>
                 <tr class="<?= $table ?>">
                     <td>{{ $collection->name }}</td>
-                    <td><strong>{{ $collection->day }}</strong></td> 
+                    <td><strong>{{ $collection->day }}</strong></td>
                     <td>{{ $collection->start }}</td>
                     <td>{{ $collection->end }}</td>
                 </tr>

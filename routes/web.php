@@ -16,7 +16,6 @@ Route::get('/change/create', function () {
     $title = 'Create Collection';
     return view('change/create', compact('title'));
 });
-Route::post('/change/create', [CollectionsController::class, 'insertData']);
 
 Route::get('/change/update', function () {
     $title = 'Change Collection';
@@ -24,3 +23,9 @@ Route::get('/change/update', function () {
 });
 
 Route::get('/change/delete', [CollectionsController::class, 'deleteData']);
+
+Route::get('/loadExampleData', [CollectionsController::class, 'exampleData']);
+
+Route::post('/change/insertData', [CollectionsController::class, 'insertData']);
+
+Route::post('/change/updateData', [CollectionsController::class, 'updateData']);

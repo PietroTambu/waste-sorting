@@ -1,12 +1,12 @@
+<?php $active_new='active'; ?>
 <?php include(app_path().'/includes/header.php'); ?>
 <?php include(app_path().'/includes/navbar.php'); ?>
-<h1 class="text-center">Add Collection Event</h1>
+<h1 class="text-center">Add Event</h1>
 
-<form action="/change/create" method="POST" class="text-center">
+<form action="/change/insertData" method="POST" class="text-center w-25 m-auto">
     {{ csrf_field() }}
-    <div class="form-group w-25 m-auto">
-        <label for="garbage">Choose the type:</label>
-        <input type="text" class="form-control text-center" name="name" autocomplete="off" list="garbagelist" placeholder="Select or type the garbage typology" required>
+    <div class="form-outline mb-4">
+        <input type="text" class="form-control" name="name" autocomplete="off" list="garbagelist" placeholder="Select or type the garbage typology" required>
         <datalist id="garbagelist">
             <option>Indifferenziato</option>
             <option>Vetro</option>
@@ -15,9 +15,9 @@
             <option>Carta</option>
         </datalist>
     </div>
-    <div class="form-group w-25 m-auto">
+    <div class="form-outline mb-4">
         <label for="day">Choose a day:</label>
-        <select class="form-control text-center" id="day" name="day" required>
+        <select class="form-control" id="day" name="day" required>
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
@@ -27,11 +27,11 @@
             <option>Sunday</option>
         </select>
     </div>
-    <div class="form-group w-25 m-auto">
+    <div class="form-group">
         <label for="start">Choose the starting time:</label>
         <input class="form-control text-center" type="time" name="start" required>
     </div>
-    <div class="form-group w-25 m-auto">
+    <div class="form-group">
         <label for="end">Choose the end time:</label>
         <input class="form-control text-center" type="time" name="end" required>
     </div>

@@ -1,56 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Collection</title>
-</head>
-<body>
-    <h1>Update Garbage Collection</h1>
+<?php include(app_path().'/includes/header.php'); ?>
+<?php include(app_path().'/includes/navbar.php'); ?>
 
-    <form action="/change/update" method="POST">
+    <h1 class="text-center">Update Garbage Collection</h1>
+    <?php $collection = json_decode($_GET['collection']); ?>
+
+    <form action="/change/updateData" method="POST">
         {{ csrf_field() }}
-        <p>
-            <label for="id">Inser the ID of the Collection *</label>
-            <input type="text" name="id" placeholder="ID of the Collection" required>
-        </p>
-        <p>
-            <label for="garbage">Change the type?:</label>
-            <input type="text" name="name" list="garbagelist" placeholder="Select or type the garbage typology">
-            <datalist id="garbagelist">
-                <option value="No">
-                <option value="Indifferenziato">
-                <option value="Vetro">
-                <option value="Plastica">
-                <option value="Umido">
-                <option value="Carta">
-            </datalist>
-        </p>
-        <p>
-            <label for="day">Choose a day:</label>
-            <select id="day" name="day">
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
-            </select>
-        </p>
-        <p>
-            <label for="start">Choose the starting time:</label>
-            <input type="time" name="start">
-        </p>
-        <p>
-            <label for="end">Choose the end time:</label>
-            <input type="time" name="end">
-        </p>
-        <p>
-        <button type="submit">Add Collection Event</button>
-        </p>
-        
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Tipology</th>
+                <th scope="col">Day</th>
+                <th scope="col">Start At:</th>
+                <th scope="col">End At:</th>
+                <th scope="col">Update</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $collection->name }}</td>
+                    <td><strong>{{ $collection->day }}</strong></td>
+                    <td>{{ $collection->start }}</td>
+                    <td>{{ $collection->end }}</td>
+                    <td><strong>ID: {{ $collection->id }}</strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-outline mb-4">
+                            <label for="garbagelist">Choose a typology:</label>
+                            <input type="text" class="form-control" name="name" autocomplete="off" list="garbagelist" placeholder="Select or type the garbage typology">
+                            <datalist id="garbagelist">
+                                <option>Indifferenziato</option>
+                                <option>Vetro</option>
+                                <option>Plastica</option>
+                                <option>umido</option>
+                                <option>Carta</option>
+                            </datalist>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-outline mb-4">
+                            <label for="day">Choose a day:</label>
+                            <select class="form-control" id="day" name="day">
+                                <option>Monday</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday</option>
+                                <option>Thursday</option>
+                                <option >Friday</option>
+                                <option>Saturday</option>
+                                <option>Sunday</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="start">Choose the starting time:</label>
+                            <input class="form-control text-center" type="time" name="start">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="end">Choose the end time:</label>
+                            <input class="form-control text-center" type="time" name="end">
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <input type="text" name="id" value="{{ $collection->id }}" class="d-none">
+                            <input type="text" name="nameOld" value="{{ $collection->name }}" class="d-none">
+                            <input type="text" name="startOld" value="{{ $collection->start }}" class="d-none">
+                            <input type="text" name="endOld" value="{{ $collection->end }}" class="d-none">
+                            <button type="submit" class="btn btn-primary my-3">Update</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
     </form>
-</body>
-</html>
+<?php include(app_path().'/includes/footer.php'); ?>
