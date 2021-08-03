@@ -37,13 +37,13 @@ class CollectionsController extends Controller
             );
         }
     }
-    public function showDaily () {
+    public static function showDaily () {
         $today = date("l");
         $data = Data::where('day', $today)->orderBy('start', 'ASC')->get();
         $title = 'Daily Page';
         return view('daily.index', compact('data', 'title'));
     }
-    public function showWeekly () {
+    public static function showWeekly () {
         $data = [
             'monday' => Data::where('day', 'monday')->get(),
             'tuesday' => Data::where('day', 'tuesday')->get(),
@@ -100,7 +100,6 @@ class CollectionsController extends Controller
         $collection->delete();
         return redirect('/weekly');
     }
-
     public static function exampleData () {
         Data::insert(['name' => 'Indifferenziato', 'day' => 'Monday', 'start' => '09:00:00', 'end' => '13:00:00', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);
         Data::insert(['name' => 'Vetro', 'day' => 'Wednesday', 'start' => '15:00:00', 'end' => '17:00:00', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);

@@ -1,13 +1,13 @@
 <?php $active_new='active'; ?>
 <?php include(app_path().'/include/header.php'); ?>
 <?php include(app_path().'/include/navbar.php'); ?>
-<h1 class="text-center">Add Event</h1>
+<h1 class="text-center">Add Collection</h1>
 
 <form action="/change/insertData" method="POST" class="text-center w-25 m-auto">
     {{ csrf_field() }}
     <div class="form-outline mb-4">
         <input type="text" class="form-control" name="name" autocomplete="off" list="garbagelist" placeholder="Select or type the garbage typology" required>
-        <datalist>
+        <datalist id="garbagelist">
             <option>Indifferenziato</option>
             <option>Vetro</option>
             <option>Plastica</option>
