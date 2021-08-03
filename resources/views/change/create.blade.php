@@ -11,7 +11,7 @@
             <option>Indifferenziato</option>
             <option>Vetro</option>
             <option>Plastica</option>
-            <option>umido</option>
+            <option>Umido</option>
             <option>Carta</option>
         </datalist>
     </div>

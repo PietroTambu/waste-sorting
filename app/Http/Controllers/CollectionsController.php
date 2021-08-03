@@ -107,7 +107,7 @@ class CollectionsController extends Controller
         Data::insert(['name' => 'Carta', 'day' => 'Thursday', 'start' => '19:00:00', 'end' => '21:00:00', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);
         Data::insert(['name' => 'Umido', 'day' => 'Friday', 'start' => '11:00:00', 'end' => '14:00:00', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);
         Data::insert(['name' => 'Plastica', 'day' => 'Saturday', 'start' => '17:00:00', 'end' => '20:00:00', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);
-        Data::insert(['name' => 'Scorie Radioattive', 'day' => 'Sunday', 'start' => '23:00:00', 'end' => '23:59:59', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);
+        Data::insert(['name' => 'Rifiuto Custom', 'day' => 'Sunday', 'start' => '23:00:00', 'end' => '23:59:59', 'updated_at' => date('y-m-d H:i:s'), 'created_at' => date('y-m-d H:i:s')]);
         return redirect('/weekly');
     }
 }
