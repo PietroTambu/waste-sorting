@@ -7,7 +7,7 @@
     {{ csrf_field() }}
     <div class="form-outline mb-4">
         <input type="text" class="form-control" name="name" autocomplete="off" list="garbagelist" placeholder="Select or type the garbage typology" required>
-        <datalist id="garbagelist">
+        <datalist>
             <option>Indifferenziato</option>
             <option>Vetro</option>
             <option>Plastica</option>
@@ -29,11 +29,11 @@
     </div>
     <div class="form-group">
         <label for="start">Choose the starting time:</label>
-        <input class="form-control text-center" type="time" name="start" required>
+        <input id="start" class="form-control text-center" type="time" name="start" required>
     </div>
     <div class="form-group">
         <label for="end">Choose the end time:</label>
-        <input class="form-control text-center" type="time" name="end" required>
+        <input id="end" class="form-control text-center" type="time" name="end" required>
     </div>
     <div>
         <button type="submit" class="btn btn-primary my-3">Add Collection Event</button>
