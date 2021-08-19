@@ -15,7 +15,7 @@
         <a class="nav-link <?= $active_weekly ?? ''?>" href="/weekly">Weekly</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link <?= $active_new ?? ''?>" href="/change/create">New Collection</a>
+        <a class="nav-link <?= $active_new ?? ''?>" href="/change/create">New Garbage Schedule</a>
         </li>
     </ul>
   </div>

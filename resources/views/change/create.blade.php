@@ -1,7 +1,7 @@
 <?php $active_new='active'; ?>
 <?php include(app_path().'/Include/header.php'); ?>
 <?php include(app_path().'/Include/navbar.php'); ?>
-<h1 class="text-center">Add Collection</h1>
+<h1 class="text-center">Add Garbage Schedule</h1>
 
 <form action="/change/create" method="POST" class="text-center w-25 m-auto">
     {{ csrf_field() }}

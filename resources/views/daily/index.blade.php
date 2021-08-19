@@ -2,7 +2,7 @@
 <?php include(app_path().'/Include/header.php'); ?>
 <?php include(app_path().'/Include/navbar.php'); ?>
 
-    <h1 class="text-center">Daily collections</h1>
+    <h1 class="text-center">Daily Garbage Schedules</h1>
     <div class="container">
         <div class="row text-center">
             <h2 class="col">Today is: <?= date("l") ?></h2>

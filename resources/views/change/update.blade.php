@@ -1,7 +1,7 @@
 <?php include(app_path().'/Include/header.php'); ?>
 <?php include(app_path().'/Include/navbar.php'); ?>
 
-<h1 class="text-center">Update Collection</h1>
+<h1 class="text-center">Update Garbage Schedule</h1>
 
 <form action="/change/update" method="POST">
     {{ csrf_field() }}

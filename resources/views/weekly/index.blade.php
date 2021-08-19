@@ -3,7 +3,7 @@
 <?php include(app_path().'/Include/navbar.php'); ?>
 
     <?php $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']; ?>
-    <h1 class="text-center center">Weekly collections</h1>
+    <h1 class="text-center center">Weekly Garbage Schedules</h1>
 
     <table class="table table-striped">
         <thead>

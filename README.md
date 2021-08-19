@@ -10,7 +10,7 @@
 ### requirements
 
 - PHP >= 7.3
-- Node.js >= 12.x
+- Node.js >= 10.x
 - NPM >= 6.x
 - Composer >= 2.1.5
 - MySQL
