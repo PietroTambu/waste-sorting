@@ -7,8 +7,8 @@
 
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th scope="col">Tipology</th>
+            <tr class="text-center">
+                <th scope="col">Typology</th>
                 <th scope="col">Day</th>
                 <th scope="col">Start At:</th>
                 <th scope="col">End At:</th>
@@ -18,21 +18,19 @@
         </thead>
         <tbody>
             @foreach ($days as $day)
-                @foreach ($data[$day] as $collection)
-                    <tr>
-                        <td>{{ $collection->name }}</td>
-                        <td><strong>{{ $collection->day }}</strong></td>
-                        <td>{{ $collection->start }}</td>
-                        <td>{{ $collection->end }}</td>
+                @foreach ($data['fetchedData'][$day] as $event_schedule)
+                    <tr class="text-center">
+                        <td>{{ $event_schedule->typology }}</td>
+                        <td><strong>{{ $event_schedule->day }}</strong></td>
+                        <td>{{ $event_schedule->start_at}}</td>
+                        <td>{{ $event_schedule->end_at }}</td>
                         <td>
-                            <form method="get" action="/change/delete">
-                                <input type="text" name="id" value="{{ $collection->id }}" class="d-none">
+                            <form method="get" action="/change/delete/{{ $event_schedule->id }}">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
                         <td>
-                            <form method="get" action="/change/update">
-                                <input type="text" name="collection" value="{{ $collection }}" class="d-none">
+                            <form method="get" action="/change/update/{{ $event_schedule->id }}">
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </td>

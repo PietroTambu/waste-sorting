@@ -39,6 +39,7 @@
     ```shell
     php artisan migrate
     php artisan key:generate
+    php artisan db:seed --class=GarbageDBSeeder
     ```
 - PHP development server (localhost:8000)
     ```shell

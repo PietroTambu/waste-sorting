@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsTable extends Migration
+class CreateGarbageScheduleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('garbage_schedule', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('typology');
+            $table->foreign('typology')->references('ID_typology')->on('garbage');
             $table->string('day');
-            $table->time('start');
-            $table->time('end');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
+            $table->time('start_at');
+            $table->time('end_at');
         });
     }
 
@@ -31,6 +30,6 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('date');
+        Schema::dropIfExists('garbage_schedule');
     }
 }

@@ -9,13 +9,9 @@
             <h3 class="col">Time: <?php date_default_timezone_set("Europe/Rome"); echo date("H:i:s"); ?></h3>
         </div>
     </div>
-
-
-
-
     <table class="table table-striped">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th scope="col">Tipology</th>
                 <th scope="col">Day</th>
                 <th scope="col">Start At:</th>
@@ -23,17 +19,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($data as $collection)
+            @foreach ($data['fetchedData'] as $event_schedule)
                 <?php
                     $table = '';
-                    if (strtotime($collection->end ?? '') < strtotime(date("H:i:s"))) { $table = 'table-danger'; }
-                    else if ((strtotime($collection->start) < strtotime(date("H:i:s"))) && (strtotime($collection->end) > strtotime(date("H:i:s")))) { $table = 'table-success'; }
+                    if (strtotime($event_schedule->end_at ?? '') < strtotime(date("H:i:s"))) { $table = 'table-danger'; }
+                    else if ((strtotime($event_schedule->start_at) < strtotime(date("H:i:s"))) && (strtotime($event_schedule->end_at) > strtotime(date("H:i:s")))) { $table = 'table-success'; }
                 ?>
-                <tr class="<?= $table ?>">
-                    <td>{{ $collection->name }}</td>
-                    <td><strong>{{ $collection->day }}</strong></td>
-                    <td>{{ $collection->start }}</td>
-                    <td>{{ $collection->end }}</td>
+                <tr class="<?= $table ?> text-center">
+                    <td>{{ $event_schedule->typology }}</td>
+                    <td><strong>{{ $event_schedule->day }}</strong></td>
+                    <td>{{ $event_schedule->start_at }}</td>
+                    <td>{{ $event_schedule->end_at }}</td>
                 </tr>
             @endforeach
         </tbody>

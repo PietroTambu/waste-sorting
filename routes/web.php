@@ -1,31 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\CollectionsController;
+use App\Http\Controllers\GarbageController;
 
 Route::get('/', function () {
     $title = 'Home Page';
     return view('index', compact('title'));
 });
 
-Route::get('/daily', [CollectionsController::class, 'showDaily']);
-Route::get('/weekly', [CollectionsController::class, 'showWeekly']);
+Route::get('/daily', [GarbageController::class, 'showDaily']);
 
-Route::get('/change/create', function () {
-    $title = 'Create Collection';
-    return view('change/create', compact('title'));
-});
+Route::get('/weekly', [GarbageController::class, 'showWeekly']);
 
-Route::get('/change/update', function () {
-    $title = 'Change Collection';
-    return view('change/update', compact('title'));
-});
+Route::get('/change/create', [GarbageController::class, 'showCreateSchedule']);
 
-Route::get('/change/delete', [CollectionsController::class, 'deleteData']);
+Route::get('/seedDB', [GarbageController::class, 'seedDB']);
 
-Route::get('/loadExampleData', [CollectionsController::class, 'exampleData']);
+Route::get('/change/delete/{id}', [GarbageController::class, 'deleteSchedule']);
 
-Route::post('/change/insertData', [CollectionsController::class, 'insertData']);
+Route::get('/change/update/{id}', [GarbageController::class, 'showUpdateSchedule']);
 
-Route::post('/change/updateData', [CollectionsController::class, 'updateData']);
+Route::post('/change/create', [GarbageController::class, 'store']);
+
+Route::post('/change/update', [GarbageController::class, 'updateSchedule']);
