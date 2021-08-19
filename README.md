@@ -35,7 +35,7 @@
     DB_USERNAME=root
     DB_PASSWORD=
     ```
-- Eseguire la migration per il database e il generate:key
+- Eseguire migration del DB, key:generate, seeding DB
     ```shell
     php artisan migrate
     php artisan key:generate
@@ -45,11 +45,6 @@
     ```shell
     php artisan serve
     ```
-  In caso di errore provare con:
-  ```shell
-  sudo php artisan serve
-  ```
-        
 ### End
 
 Start2Impact PHP e MySQL by Pietro Tamburini

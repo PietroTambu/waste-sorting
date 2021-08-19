@@ -1,6 +1,6 @@
 <?php $active_new='active'; ?>
-<?php include(app_path().'/include/header.php'); ?>
-<?php include(app_path().'/include/navbar.php'); ?>
+<?php include(app_path().'/Include/header.php'); ?>
+<?php include(app_path().'/Include/navbar.php'); ?>
 <h1 class="text-center">Add Collection</h1>
 
 <form action="/change/create" method="POST" class="text-center w-25 m-auto">
@@ -40,4 +40,4 @@
     </div>
 
 </form>
-<?php include(app_path().'/include/footer.php'); ?>
+<?php include(app_path().'/Include/footer.php'); ?>

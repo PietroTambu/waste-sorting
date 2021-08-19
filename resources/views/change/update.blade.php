@@ -1,5 +1,5 @@
-<?php include(app_path().'/include/header.php'); ?>
-<?php include(app_path().'/include/navbar.php'); ?>
+<?php include(app_path().'/Include/header.php'); ?>
+<?php include(app_path().'/Include/navbar.php'); ?>
 
 <h1 class="text-center">Update Collection</h1>
 
@@ -73,6 +73,5 @@
         </tbody>
     </table>
     @endforeach
-
 </form>
-<?php include(app_path().'/include/footer.php'); ?>
+<?php include(app_path().'/Include/footer.php'); ?>

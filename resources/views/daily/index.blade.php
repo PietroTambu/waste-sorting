@@ -1,6 +1,6 @@
 <?php $active_daily='active' ?>
-<?php include(app_path().'/include/header.php'); ?>
-<?php include(app_path().'/include/navbar.php'); ?>
+<?php include(app_path().'/Include/header.php'); ?>
+<?php include(app_path().'/Include/navbar.php'); ?>
 
     <h1 class="text-center">Daily collections</h1>
     <div class="container">
