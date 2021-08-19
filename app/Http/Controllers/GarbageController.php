@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class GarbageController extends Controller
 {
-    public function store(Request $request){
+    public function storeSchedule(Request $request){
         DB::table('garbage')->insertOrIgnore([
             'ID_typology' => $request->typology
         ]);
         $record = new GarbageSchedule;
-        $res = $record->store($request);
+        $res = $record->storeSchedule($request);
         if (!$res) {
             return self::showCreateSchedule();
         }

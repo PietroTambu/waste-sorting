@@ -20,6 +20,6 @@ Route::get('/change/delete/{id}', [GarbageController::class, 'deleteSchedule']);
 
 Route::get('/change/update/{id}', [GarbageController::class, 'showUpdateSchedule']);
 
-Route::post('/change/create', [GarbageController::class, 'store']);
+Route::post('/change/create', [GarbageController::class, 'storeSchedule']);
 
 Route::post('/change/update', [GarbageController::class, 'updateSchedule']);

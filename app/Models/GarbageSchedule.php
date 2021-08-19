@@ -10,7 +10,7 @@ class GarbageSchedule extends Model
     protected $connection = 'mysql';
     public $timestamps = false;
 
-    public function store ($param): bool
+    public function storeSchedule($param): bool
     {
         $time = check_time_validity($param->start_at, $param->end_at);
         if ($time) {
